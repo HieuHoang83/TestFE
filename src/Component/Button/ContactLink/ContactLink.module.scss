@@ -1,0 +1,52 @@
+.contactLink {
+  background-color: #1890ff;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s, transform 0.2s;
+  user-select: none;
+
+  &:hover {
+    filter: brightness(99%);
+    transform: scale(1.03);
+    color: white;
+  }
+}
+/* ================== RESPONSIVE ================== */
+
+/* Điện thoại loại nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+  .contactLink {
+    font-size: 8px;
+    padding: 3px 8px;
+  }
+}
+
+/* Điện thoại phổ thông (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .contactLink {
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+}
+
+/* Máy tính bảng (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contactLink {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+}
+
+/* Máy tính màn hình vừa (1024px – 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .contactLink {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}

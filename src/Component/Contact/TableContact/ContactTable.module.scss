@@ -1,0 +1,251 @@
+.wrapper {
+  padding: 0px 20px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.tableContainer {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table {
+  width: 100%;
+  min-height: 400px;
+  overflow-y: hidden !important;
+  margin-top: 20px;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  text-align: right;
+}
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+.btnAddContact {
+  margin-left: auto;
+  padding: 5px 12px;
+  background-color: #1890ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #40a9ff;
+  }
+}
+
+.loadingWrapper {
+  position: fixed; // hoặc absolute, tùy mục đích
+  top: 0;
+  left: 0;
+  width: 100vw; // toàn bộ chiều ngang viewport
+  height: 100vh; // toàn bộ chiều cao viewport
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0; // bỏ padding-bottom vì không cần
+  background: rgba(255, 255, 255, 0.7); // nếu muốn làm mờ nền
+  z-index: 9999; // đảm bảo nó nổi trên các phần khác
+}
+
+/* shared styles for table cells */
+.headerCell {
+  background-color: #fafafa;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  border: 2px solid #f0f0f0;
+  border-radius: 0 0 0 0;
+  padding: 12px !important;
+  white-space: normal;
+  word-break: break-word;
+}
+.headerCellaction {
+  background-color: red;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  border: 2px solid #f0f0f0;
+  border-radius: 0 0 0 0;
+  padding: 12px !important;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center !important ;
+}
+.cell {
+  border: 2px solid #f0f0f0;
+  padding: 10px !important;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.centeredCell {
+  border: 2px solid #f0f0f0;
+  padding: 10px !important;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+}
+/* ================== RESPONSIVE ================== */
+/* Điện thoại loại nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+  .table {
+    min-height: 360px;
+  }
+
+  .wrapper {
+    width: 98%;
+    padding: 5px;
+  }
+  .searchWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12px;
+  }
+  .btnAddContact {
+    position: relative;
+    font-size: 14px;
+  }
+  .cell,
+  .centeredCell {
+    font-size: 11px;
+    padding: 6px !important;
+  }
+  .headerCell {
+    font-size: 11px;
+    padding: 3px !important;
+    text-align: center !important;
+  }
+  .actionButtons {
+    gap: 8px;
+  }
+
+  .paginationWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .col-email,
+  .col-position,
+  .col-name,
+  .col-note,
+  .col-action {
+    text-align: center !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Điện thoại phổ thông (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .table {
+    height: 360px;
+  }
+
+  .wrapper {
+    width: 98%;
+    padding: 10px;
+  }
+  .searchWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12px;
+  }
+  .btnAddContact {
+    position: relative;
+    font-size: 14px;
+  }
+  .cell,
+  .centeredCell {
+    font-size: 12px;
+    padding: 6px !important;
+  }
+  .headerCell {
+    font-size: 11px;
+    padding: 3px !important;
+    text-align: center !important;
+  }
+  .actionButtons {
+    gap: 12px;
+  }
+
+  .paginationWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .col-email,
+  .col-position,
+  .col-name,
+  .col-note,
+  .col-action {
+    text-align: center !important;
+    font-size: 12px !important;
+    padding: 8px 10px;
+  }
+}
+
+/* Máy tính bảng (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .wrapper {
+    width: 97%;
+    padding: 10px;
+  }
+  .cell,
+  .centeredCell {
+    font-size: 13px;
+    padding: 8px !important;
+  }
+  .headerCell {
+    font-size: 11px;
+    padding: 3px !important;
+    text-align: center !important;
+  }
+  .actionButtons {
+    gap: 12px;
+  }
+  .col-email,
+  .col-position,
+  .col-name,
+  .col-note,
+  .col-action {
+    text-align: center !important;
+    font-size: 12px !important;
+    padding: 8px 10px;
+  }
+}
+/* Máy tính màn hình vừa (1024px – 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .headerCell,
+  .cell,
+  .centeredCell {
+    font-size: 15px;
+    padding: 8px !important;
+    font-size: 12px;
+  }
+  .table {
+    min-height: 360px;
+  }
+  .actionButtons {
+    gap: 15px;
+  }
+}
