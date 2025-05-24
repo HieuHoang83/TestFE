@@ -45,7 +45,7 @@ export default function CustomerTable() {
     fetcher,
     {
       revalidateOnFocus: true, // Không tự động fetch lại khi tab focus
-      refreshInterval: 10000, // Tự động fetch lại mỗi 10 giây
+      refreshInterval: 60000, // Tự động fetch lại mỗi 10 giây
       dedupingInterval: 5000, // Nếu gọi API cùng url trong vòng 5 giây thì dùng cache, không gọi lại
     }
   );
